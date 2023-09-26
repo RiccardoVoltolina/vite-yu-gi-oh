@@ -23,8 +23,8 @@ export default {
     axios
     .get(this.base_url)
     .then(response => {
-      console.log(response.data.data.);
-      this.card_sets = response.data
+      console.log(response.data.data[0].card_images[0].image_url);
+      this.card_sets = response.data.data
     })
   }
 }
