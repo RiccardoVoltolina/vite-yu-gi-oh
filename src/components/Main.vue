@@ -1,6 +1,5 @@
 <script>
 import {store} from '../store.js'
-import axios from 'axios'
 
 
 
@@ -9,19 +8,11 @@ export default {
   data () {
     return {
         store,
-        base_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php',
-        card_sets: null,
-        card_images: null,
     }
   },
   created() {
-    axios
-    .get(this.base_url)
-    .then(response => {
-      console.log(response.data.data[0].name);
-      this.card_sets = response.data.data
-      console.log(this.card_sets);
-    })
+    store.fetchData();
+
   }
 
 
@@ -41,11 +32,11 @@ export default {
             </div>
             <div class="container bg-white p-5">
                 <h4 class="m-auto bg-black text-white py-2">Found 39 cards</h4>
-                <div class="bg_orange container g-0">
-                    <div class="row g-0">
-                        <div class="col-3 d-flex flex-column">
-                            <img :src="card_sets[0].card_images[0].image_url" alt="">
-                            <h3 class="text-center text-white py-3">{{ card_sets[0].name }}</h3>
+                <div class="bg-white container g-0">
+                    <div class="row">
+                        <div class="col-3 d-flex flex-column bg_orange" v-for="card in store.cards">
+                            <img :src="card.card_images[0].image_url" alt="">
+                            <h3 class="text-center text-white py-3">{{ card.name }}</h3>
                             <div class="text-center">Alien</div>
                         </div>
                         
@@ -67,7 +58,6 @@ export default {
 <style lang="scss" scoped>
 .bg_orange {
     background-color: orange;
-    height: 600px;
 }
 
 </style>

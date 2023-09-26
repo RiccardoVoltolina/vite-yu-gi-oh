@@ -1,14 +1,22 @@
 import {reactive} from 'vue';
+import axios from 'axios';
+
 
 export const store = reactive ({
-    cards: [],
+    base_url: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
+    cards: null,
+    info: null,
 
-    inputValue: "",
 
-    APIcall: "https://db.ygoprodeck.com/api/v7/cardinfo.php",
 
-    APIquery: "?num=50&offset=0&fname=",
+   
 
-    ResultCounter: "",
+    fetchData(){
+        axios(this.base_url)
+        .then(response =>{
+            console.log(response);
+            this.cards = response.data.data
+        })
+    },
 
 });
