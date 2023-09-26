@@ -34,10 +34,12 @@ export default {
                 <h4 class="m-auto bg-black text-white py-2">Found 39 cards</h4>
                 <div class="bg-white container g-0">
                     <div class="row">
-                        <div class="col-3 d-flex flex-column bg_orange" v-for="card in store.cards">
-                            <img :src="card.card_images[0].image_url" alt="">
-                            <h3 class="text-center text-white py-3">{{ card.name }}</h3>
-                            <div class="text-center">Alien</div>
+                        <div class="col-3 pb-4" v-for="card in store.cards">
+                            <div class="bg_orange d-flex flex-column">
+                                <img :src="card.card_images[0].image_url" alt="">
+                                <h3 class="text-center text-white py-3">{{ card.name }}</h3>
+                                <div class="text-center pb-3">Alien</div>
+                            </div>
                         </div>
                         
                     </div>
