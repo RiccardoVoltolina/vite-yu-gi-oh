@@ -22,8 +22,8 @@ export default {
   },
   methods: {
     searchArchetyp() {
-        const url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + '?archetype=Alien';
-        console.log(this.store.base_url);
+/*         this.store.base_url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + `?archetype=${}`;
+ */        console.log(store.selectArch);
     }
   }
 
