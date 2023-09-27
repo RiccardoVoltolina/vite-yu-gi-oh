@@ -25,11 +25,12 @@ export default {
 /*          this.store.base_url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + `?archetype=${store.selectArch}`;
  */         
             const url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + `?archetype=${store.selectArch}`
-            store.fetchData(url) 
+            
             console.log(url);
-
+            this.store.base_url = url + '&num=20&offset=0'
+            store.fetchData(url) 
     }
-  }
+  },
 
 
 }

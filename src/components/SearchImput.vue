@@ -23,7 +23,6 @@ export default {
             <option disabled value="">Choose Archetyp</option>
             <option value="Alien">Alien</option>
             <option value="Noble Knight">Noble Knight</option>
-            <option value="Tainted Treasure">Tainted Treasure</option>
             <option value="Melodious">Melodious</option>
             <option value="Archfiend">Archfiend</option>
         </select>
