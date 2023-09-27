@@ -14,8 +14,8 @@ export const store = reactive ({
     fetchData(){
         axios(this.base_url)
         .then(response =>{
-            console.log(response);
             this.cards = response.data.data
+            console.log(this.cards);
         })
     },
 
