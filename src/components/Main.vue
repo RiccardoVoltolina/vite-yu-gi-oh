@@ -13,6 +13,12 @@ export default {
   created() {
     store.fetchData();
 
+  },
+  methods: {
+    searchArchetyp() {
+        const url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + '?archetype=Alien';
+        console.log(store.fetchData);
+    }
   }
 
 
@@ -23,11 +29,13 @@ export default {
     <main class="bg_orange">
         <div class="container w-75">
             <div class="py-3">
-                <select class="form-select w-25" aria-label="Default select example">
-                    <option selected>Alien</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select w-25" aria-label="Default select example" @change="searchArchetyp()">
+                    <option selected>Choose Archetyp</option>
+                    <option value="Alien">Alien</option>
+                    <option value="Noble Knight">Noble Knight</option>
+                    <option value="Tainted Treasure">Tainted Treasure</option>
+                    <option value="Melodious">Melodious</option>
+                    <option value="Archfiend">Archfiend</option>
                 </select>
             </div>
             <div class="container bg-white p-5">
