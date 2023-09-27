@@ -23,9 +23,10 @@ export default {
   methods: {
     searchArchetyp() {
 /*          this.store.base_url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + `?archetype=${store.selectArch}`;
- */         console.log(store.selectArch);
+ */         
             const url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php' + `?archetype=${store.selectArch}`
-            store.fetchData(url)
+            store.fetchData(url) 
+            console.log(url);
 
     }
   }
